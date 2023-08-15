@@ -1,0 +1,24 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = maxtnuk@gmail.com
+	name = maxtnuk
+[credential]
+	helper = store
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+  required = true
+[alias]
+  pto = push origin HEAD
+  ptof = push origin --force HEAD
+  st = status -sb
+  last =log -1 HEAD --stat
+  cm = commit -m
+  dv = difftool -t vimdiff -y
+  gl = config --global -l
